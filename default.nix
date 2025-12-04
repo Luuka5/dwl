@@ -52,7 +52,6 @@ stdenv.mkDerivation ({
     xcbutilwm
     xwayland
     wayland-scanner
-    home-utilities
   ];
 
   outputs = [ "out" "man" ];
@@ -68,12 +67,6 @@ stdenv.mkDerivation ({
     make clean
     make
   '';
-
-  postInstall = ''
-    wrapProgram $out/bin/dwl \
-      --prefix PATH : ${home-utilities}/bin
-  '';
-
 
   meta = {
     homepage = "https://github.com/tomaskallup/dwl/";
@@ -98,7 +91,7 @@ stdenv.mkDerivation ({
 })
 
 pkgs.symlinkJoin {
-  name = "home-utilities";
+  name = "dwl-custom"
   paths = [
     (makeScript "bt-last-device" [ pkgs.blueman ])
     (makeScript "bt-disconnect-last" [ pkgs.blueman ])
