@@ -16,13 +16,10 @@
   xwayland,
   gnumake,
   makeWrapper,
-  # My custom made packages from my github https://github.com/Luuka5/home-utilities
-  home-utilities
+  pkgs
 }:
 
 let
-  pkgs = import <nixpkgs> { };
-
   home-utilities = pkgs.callPackage (pkgs.fetchFromGitHub {
     owner = "Luuka5";
     repo = "home-utilities";
