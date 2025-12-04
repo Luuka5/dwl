@@ -14,7 +14,19 @@
 , xcbutilwm
 , xwayland
 , gnumake
+, home-utilities # My custom made packages from my github https://github.com/Luuka5/home-utilities
 }:
+
+let
+
+  home-utilities = callPackage (fetchFromGitHub {
+    owner = "yourusername";
+    repo = "home-utilities";
+    rev = "59191c08e7c390e0ef0d7e2591e0afd5f3567a4c";
+    hash = "sha256-ef1w9V3Zc4AVPVC49rqIibe9h7ObP3l/CL8cMoRek8s=";
+  }) {};
+
+in
 
 stdenv.mkDerivation ({
   pname = "dwl";
@@ -40,6 +52,7 @@ stdenv.mkDerivation ({
     xcbutilwm
     xwayland
     wayland-scanner
+    home-utilities
   ];
 
   outputs = [ "out" "man" ];
@@ -55,6 +68,13 @@ stdenv.mkDerivation ({
     make clean
     make
   '';
+
+  postInstall = ''
+    wrapProgram $out/bin/dwl \
+      --prefix PATH : ${home-utilities}/bin
+  '';
+
+  nativeBuildInputs = nativeBuildInputs ++ [ makeWrapper ];
 
   meta = {
     homepage = "https://github.com/tomaskallup/dwl/";
