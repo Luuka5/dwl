@@ -63,6 +63,7 @@ let
     ];
 
     buildPhase = ''
+      cd dwl
       make clean
       make
     '';
