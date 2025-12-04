@@ -30,7 +30,8 @@ let
     pname = "dwl";
     version = "0.7";
 
-    src = builtins.path { name = "dwl-custom"; path = ./dwl; };
+    src = ./dwl;
+    #src = builtins.path { name = "dwl-custom"; path = ./dwl; };
 
     nativeBuildInputs = [
       installShellFiles
