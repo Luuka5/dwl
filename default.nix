@@ -20,13 +20,11 @@
 }:
 
 let
-  home-utilities = pkgs.callPackage (pkgs.fetchFromGitHub {
-    owner = "Luuka5";
-    repo = "home-utilities";
-    rev = "59191c08e7c390e0ef0d7e2591e0afd5f3567a4c";
-    hash = "sha256-ef1w9V3Zc4AVPVC49rqIibe9h7ObP3l/CL8cMoRek8s=";
-  }) {};
-
+  makeScript = name: runtimeInputs: pkgs.writeShellApplication {
+    inherit name;
+    runtimeInputs = runtimeInputs;
+    text = builtins.readFile ./scripts/${name}.sh;
+  };
 in
 
 stdenv.mkDerivation ({
@@ -97,8 +95,24 @@ stdenv.mkDerivation ({
     mainProgram = "dwl";
   };
 
-  passthru = {
-    inherit home-utilities;
-  };
-
 })
+
+pkgs.symlinkJoin {
+  name = "home-utilities";
+  paths = [
+    (makeScript "bt-last-device" [ pkgs.blueman ])
+    (makeScript "bt-disconnect-last" [ pkgs.blueman ])
+
+    (makeScript "clipscreenshot" [ pkgs.grim pkgs.slurp ])
+    (makeScript "savescreenshot" [ pkgs.grim pkgs.slurp ])
+    (makeScript "screenshot" [ pkgs.grim pkgs.slurp ])
+
+    (makeScript "start-wm" [ pkgs.dwl pkgs.dwlb ])
+
+    (makeScript "status" [ ]) # ?
+    (makeScript "media-control" [ ])  # ?
+    
+    (makeScript "lock" [ ]) # ?
+    (makeScript "locksuspend" [ ]) # ?
+  ];
+}
