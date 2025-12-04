@@ -38,6 +38,7 @@ stdenv.mkDerivation ({
     installShellFiles
     pkg-config
     gnumake
+    makeWrapper
   ];
 
   buildInputs = [
@@ -74,7 +75,6 @@ stdenv.mkDerivation ({
       --prefix PATH : ${home-utilities}/bin
   '';
 
-  nativeBuildInputs = nativeBuildInputs ++ [ makeWrapper ];
 
   meta = {
     homepage = "https://github.com/tomaskallup/dwl/";
