@@ -1,25 +1,29 @@
-{ lib
-, stdenv
-, installShellFiles
-, libX11
-, libinput
-, libxcb
-, libxkbcommon
-, pixman
-, pkg-config
-, wayland-scanner
-, wayland
-, wayland-protocols
-, wlroots_0_18
-, xcbutilwm
-, xwayland
-, gnumake
-, home-utilities # My custom made packages from my github https://github.com/Luuka5/home-utilities
+{
+  lib,
+  stdenv,
+  installShellFiles,
+  libX11,
+  libinput,
+  libxcb,
+  libxkbcommon,
+  pixman,
+  pkg-config,
+  wayland-scanner,
+  wayland,
+  wayland-protocols,
+  wlroots_0_18,
+  xcbutilwm,
+  xwayland,
+  gnumake,
+  makeWrapper,
+  # My custom made packages from my github https://github.com/Luuka5/home-utilities
+  home-utilities
 }:
 
 let
+  pkgs = import <nixpkgs> { };
 
-  home-utilities = pkgs.callPackage (fetchFromGitHub {
+  home-utilities = pkgs.callPackage (pkgs.fetchFromGitHub {
     owner = "Luuka5";
     repo = "home-utilities";
     rev = "59191c08e7c390e0ef0d7e2591e0afd5f3567a4c";
