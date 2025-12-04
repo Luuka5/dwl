@@ -95,4 +95,9 @@ stdenv.mkDerivation ({
     inherit (wayland.meta) platforms;
     mainProgram = "dwl";
   };
+
+  passthru = {
+    inherit home-utilities;
+  };
+
 })
