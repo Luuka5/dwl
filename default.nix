@@ -31,13 +31,11 @@ let
     version = "0.7";
 
     src = ./dwl;
-    #src = builtins.path { name = "dwl-custom"; path = ./dwl; };
 
     nativeBuildInputs = [
       installShellFiles
       pkg-config
       gnumake
-      makeWrapper
     ];
 
     buildInputs = [
@@ -88,12 +86,50 @@ let
       mainProgram = "dwl";
     };
   };
+
+  dwlb = stdenv.mkDerivation {
+    pname = "dwlb";
+    version = "0.1";
+
+    src = ./dwlb;
+
+    nativeBuildInputs = [
+      installShellFiles
+      pkg-config
+      gnumake
+    ];
+
+    buildInputs = [
+      pixman
+    ];
+
+    outputs = [ "out" "man" ];
+
+    makeFlags = [
+    ];
+
+    buildPhase = ''
+      make clean
+      make
+    '';
+
+    meta = {
+      homepage = "https://github.com/kolumni/dwlb/";
+      description = "A fast, feature-complete bar for dwl."; 
+      longDescription = ''
+        A fast, feature-complete bar for dwl."; 
+      '';
+      inherit (wayland.meta) platforms;
+      mainProgram = "dwlb";
+    };
+  };
 in
 
 pkgs.symlinkJoin {
   name = "dwl-custom";
   paths = [
     dwl
+    dwlb
     (makeScript "bt-last-device" [ pkgs.blueman ])
     (makeScript "bt-disconnect-last" [ pkgs.blueman ])
 
