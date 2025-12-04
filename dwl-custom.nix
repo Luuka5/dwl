@@ -10,7 +10,7 @@
 , wayland-scanner
 , wayland
 , wayland-protocols
-, wlroots_0_16
+, wlroots_0_19
 , xcbutilwm
 , xwayland
 , gnumake
@@ -18,7 +18,7 @@
 
 stdenv.mkDerivation ({
   pname = "dwl";
-  version = "0.4";
+  version = "0.7";
 
   src = builtins.path { name = "dwl-custom"; path = ./.; };
 
