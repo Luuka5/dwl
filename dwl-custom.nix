@@ -10,7 +10,7 @@
 , wayland-scanner
 , wayland
 , wayland-protocols
-, wlroots_0_19
+, wlroots_0_18
 , xcbutilwm
 , xwayland
 , gnumake
@@ -35,7 +35,7 @@ stdenv.mkDerivation ({
     pixman
     wayland
     wayland-protocols
-    wlroots_0_19
+    wlroots_0_18
     libX11
     xcbutilwm
     xwayland
