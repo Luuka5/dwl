@@ -19,8 +19,8 @@
 
 let
 
-  home-utilities = callPackage (fetchFromGitHub {
-    owner = "yourusername";
+  home-utilities = pkgs.callPackage (fetchFromGitHub {
+    owner = "Luuka5";
     repo = "home-utilities";
     rev = "59191c08e7c390e0ef0d7e2591e0afd5f3567a4c";
     hash = "sha256-ef1w9V3Zc4AVPVC49rqIibe9h7ObP3l/CL8cMoRek8s=";
