@@ -91,7 +91,7 @@ stdenv.mkDerivation ({
 })
 
 pkgs.symlinkJoin {
-  name = "dwl-custom"
+  name = "dwl-custom";
   paths = [
     (makeScript "bt-last-device" [ pkgs.blueman ])
     (makeScript "bt-disconnect-last" [ pkgs.blueman ])
