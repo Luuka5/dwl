@@ -145,8 +145,6 @@ in
 pkgs.symlinkJoin {
   name = "dwl-custom";
   paths = [
-    dwl
-    dwlb
     (makeScript "bt-last-device" [ pkgs.blueman ])
     (makeScript "bt-disconnect-last" [ pkgs.blueman ])
 
