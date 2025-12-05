@@ -165,5 +165,6 @@ pkgs.symlinkJoin {
     (makeScript "locksuspend" [ kanshi ]) # ?
 
     (makeScript "start-wm" [ dwl dwlb]) # ?
+    (makeScript "post-startup" [ kanshi ]) # ?
   ];
 }

@@ -1,0 +1,3 @@
+
+kashi &
+run-status &
