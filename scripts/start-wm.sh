@@ -1,3 +1,3 @@
 
-dwl -s 'dwlb'
+exec dwl -s 'dwlb'
 
