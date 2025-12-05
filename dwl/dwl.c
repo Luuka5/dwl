@@ -3246,7 +3246,7 @@ xwaylandready(struct wl_listener *listener, void *data)
 
 void
 runAutostart(void) {
-	system("bash $HOME/.start.sh &");
+	system("startup &");
 }
 
 int
