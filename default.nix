@@ -162,9 +162,9 @@ pkgs.symlinkJoin {
     (makeScript "brightness-control" [ ])
     
     (makeScript "lock" [ swaylock ]) # ?
-    (makeScript "locksuspend" [ kanshi ]) # ?
+    (makeScript "locksuspend" [ pkgs.kanshi ]) # ?
 
     (makeScript "start-wm" [ dwl dwlb]) # ?
-    (makeScript "post-startup" [ kanshi ]) # ?
+    (makeScript "post-startup" [ pkgs.kanshi ]) # ?
   ];
 }

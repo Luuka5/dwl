@@ -3246,7 +3246,8 @@ xwaylandready(struct wl_listener *listener, void *data)
 
 void
 runAutostart(void) {
-	spawn({.v = "post-startup" });
+	Arg arg = { .v = "post-startup" }
+	spawn(&arg);
 }
 
 int
