@@ -152,12 +152,15 @@ pkgs.symlinkJoin {
     (makeScript "savescreenshot" [ pkgs.grim pkgs.slurp ])
     (makeScript "screenshot" [ pkgs.grim pkgs.slurp ])
 
-    (makeScript "start-wm" [ pkgs.dwl pkgs.dwlb ])
+    (makeScript "track" [ ]) 
+    (makeScript "status" [ ]) 
+    (makeScript "run-status" [ ]) 
 
-    (makeScript "status" [ ]) # ?
-    (makeScript "media-control" [ ])  # ?
+    (makeScript "media-control" [ ]) 
+    (makeScript "brightness-control" [ ])
     
-    (makeScript "lock" [ ]) # ?
-    (makeScript "locksuspend" [ ]) # ?
+    (makeScript "lock" [ swaylock ]) # ?
+    (makeScript "locksuspend" [ kanshi ]) # ?
+
   ];
 }
