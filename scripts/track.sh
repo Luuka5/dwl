@@ -24,7 +24,7 @@ STATUS="${STATUS:-$COMMAND}"
 
 FILE="$STATUS_DIR/${ID:-$COMMAND}"
 
-mkdir -p $STATUS_DIR
+mkdir -p "$STATUS_DIR"
 echo "$STATUS" > "$FILE"
 MODIFY="$(stat "$FILE" | grep "Modify")"
 status
@@ -33,7 +33,7 @@ status
 EXIT_CODE=$?
 
 (
-	sleep ${SLEEP:-"0"}
+	sleep "${SLEEP:-"0"}"
 	if [ "$MODIFY" = "$(stat "$FILE" | grep "Modify")" ]; then
 		rm "$FILE"
 	fi
