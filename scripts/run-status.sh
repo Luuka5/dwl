@@ -24,7 +24,7 @@ done
 ) &
 
 (
-	ip monitor | grep -e " UP " -e " DOWN " | while read -r line; do
+	ip monitor | grep -e " UP " -e " DOWN " | while read -r _; do
 		status
 	done
 ) &
