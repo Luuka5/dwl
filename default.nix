@@ -17,6 +17,7 @@
   gnumake,
   fcft,
   swaylock,
+  kanshi,
   pkgs
 }:
 
