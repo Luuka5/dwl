@@ -15,7 +15,7 @@
   xcbutilwm,
   xwayland,
   gnumake,
-  makeWrapper,
+  fcft,
   pkgs
 }:
 
@@ -100,6 +100,7 @@ let
     ];
 
     buildInputs = [
+      fcft 
       libinput
       libxcb
       libxkbcommon
