@@ -100,7 +100,17 @@ let
     ];
 
     buildInputs = [
+      libinput
+      libxcb
+      libxkbcommon
       pixman
+      wayland
+      wayland-protocols
+      wlroots_0_18
+      libX11
+      xcbutilwm
+      xwayland
+      wayland-scanner
     ];
 
     outputs = [ "out" "man" ];
