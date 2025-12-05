@@ -16,6 +16,7 @@
   xwayland,
   gnumake,
   fcft,
+  swaylock,
   pkgs
 }:
 
