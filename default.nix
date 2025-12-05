@@ -155,7 +155,7 @@ pkgs.symlinkJoin {
     (makeScript "screenshot" [ pkgs.grim pkgs.slurp ])
 
     (makeScript "track" [ ]) 
-    (makeScript "status" [ ]) 
+    (makeScript "status" [ pkgs.iproute2 ]) 
     (makeScript "run-status" [ ]) 
 
     (makeScript "media-control" [ ]) 
