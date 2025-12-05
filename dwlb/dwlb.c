@@ -472,7 +472,7 @@ draw_frame(Bar *bar)
 	x = draw_text(custom_title ? bar->title.text : bar->window_title,
 		      x, y, foreground, foreground_mask, background,
 		      (bar->sel && active_color_title) ? &active_fg_color : &inactive_fg_color,
-		      (bar->sel && active_color_title) ? &active_bg_color : &inactive_bg_color,
+		      &inactive_bg_color,
 		      bar->width - status_width, bar->height, 0,
 		      custom_title ? bar->title.colors : NULL,
 		      custom_title ? bar->title.colors_l : 0);
