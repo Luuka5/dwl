@@ -106,6 +106,10 @@ let
     outputs = [ "out" "man" ];
 
     makeFlags = [
+      "PKG_CONFIG=${stdenv.cc.targetPrefix}pkg-config"
+      "WAYLAND_SCANNER=wayland-scanner"
+      "PREFIX=$(out)"
+      "MANDIR=$(man)/share/man"
     ];
 
     buildPhase = ''
