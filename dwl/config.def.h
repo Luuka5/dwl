@@ -13,7 +13,7 @@ static int gaps 			   = 1;
 
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
 static const float rootcolor[]             = COLOR(0x000000ff);
-static const float bordercolor[]           = COLOR(0x1c1c1cff);
+static const float bordercolor[]           = COLOR(0xfbb829ff);
 static const float focuscolor[]            = COLOR(0xcc241dff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
@@ -132,7 +132,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 // Track command is used to send an symbol to status bar informing that the operation is being done
 static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wmenu-run", "-N", "000000ff", "-S", "cc241dff", NULL };
+static const char *menucmd[] = { "wmenu-run", "-N", "000000ff", "-S", "fbb829ff", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 
 static const char *lockcmd[] = { "lock", NULL };
