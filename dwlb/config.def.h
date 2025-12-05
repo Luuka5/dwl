@@ -7,7 +7,7 @@
 // use ipc functionality
 static bool ipc = false;
 // initially hide all bars
-static bool hidden = false;
+static bool hidden = true;
 // initially draw all bars at the bottom
 static bool bottom = false;
 // hide vacant tags
