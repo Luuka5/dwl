@@ -1,7 +1,3 @@
 
-echo "Starting dwl..."
-
-dwl -s 'dwlb' &
-kanshi &
-status &
+dwl -s 'dwlb'
 
