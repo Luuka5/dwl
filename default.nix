@@ -161,9 +161,9 @@ pkgs.symlinkJoin {
     (makeScript "media-control" [ ]) 
     (makeScript "brightness-control" [ ])
     
-    (makeScript "lock" [ swaylock ]) # ?
-    (makeScript "locksuspend" [ kanshi ]) # ?
+    (makeScript "lock" [ pkgs.swaylock ])
+    (makeScript "locksuspend" [ pkgs.kanshi ])
 
-    (makeScript "start-wm" [ dwl dwlb]) # ?
+    (makeScript "start-wm" [ dwl dwlb pkgs.kanshi ])
   ];
 }
