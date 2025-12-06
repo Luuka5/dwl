@@ -3247,7 +3247,7 @@ xwaylandready(struct wl_listener *listener, void *data)
 #endif
 
 void
-runPostStartup(void) {
+runPostStartup() {
 	Arg arg = { .v = poststartupcmd };
 	spawn(&arg);
 }
