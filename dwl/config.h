@@ -132,7 +132,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 // Track command is used to send an symbol to status bar informing that the operation is being done
 static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wmenu-run", "-N", "000000ff", "-S", "ef2f27ff", NULL };
+static const char *menucmd[] = { "wmenu-run", "-N", "1c1b19ff", "-S", "1c1b19ff", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 
 static const char *lockcmd[] = { "lock", NULL };
