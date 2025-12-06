@@ -2,6 +2,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+lock
+
 (
 sleep 0.5
 dwlb -show HDMI-A-1 &
