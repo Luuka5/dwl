@@ -3,7 +3,7 @@ swaylock \
   --image "/usr/share/wallpapers/srcery.png" \
   --scaling center \
   --color 1c1b19 \
-  --ring-color 00000000 \
+  --ring-color 918175 \
   --ring-ver-color 519f50 \
   --ring-wrong-color ef2f27 \
   --ring-clear-color 2c78bf \
