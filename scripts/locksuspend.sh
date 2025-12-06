@@ -1,4 +1,4 @@
-lock
+lock &
 
 systemctl suspend
 

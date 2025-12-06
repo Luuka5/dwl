@@ -1,3 +1,4 @@
+
 swaylock \
   --image "/usr/share/wallpapers/srcery-locked.png" \
   --scaling center \

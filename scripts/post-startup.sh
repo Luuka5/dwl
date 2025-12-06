@@ -3,7 +3,7 @@ set -o nounset
 set -o pipefail
 
 kanshi  &
-lock
+lock &
 
 run-status &
 
