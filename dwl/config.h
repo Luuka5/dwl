@@ -153,7 +153,7 @@ static const char *brightnessupcmd[] = { "track", "\uf400+", "0.5", "--", "brigh
 static const char *brightnessdowncmd[] = { "track", "\uf400-", "0.5", "--", "brightness-control", "down", NULL };
 
 // This has to be defined, It is called directly from source after startup
-static const char *poststartupcmd = { "/bin/sh", "-c", "post-startup", NULL };
+static const char *poststartupcmd[] = { "post-startup", NULL };
 
 void
 toggledwlb(const Arg *arg)
