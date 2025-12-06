@@ -1,3 +1,7 @@
+set -o errexit
+set -o nounset
+set -o pipefail
+
 (
 sleep 1
 dwlb -show HDMI-A-1
@@ -11,6 +15,17 @@ swayidle -w \
   before-sleep 'lock' \
   after-resume 'kanshi' &
 
+(
+set +o errexit
+set +o nounset
+set +o pipefail
+
+sleep 5
+
 kanshi &
+sleep 1
 pkill kanshi
+sleep 1
+
 kanshi
+) &
