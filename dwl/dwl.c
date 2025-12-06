@@ -359,6 +359,8 @@ static void xytonode(double x, double y, struct wlr_surface **psurface,
 		Client **pc, LayerSurface **pl, double *nx, double *ny);
 static void zoom(const Arg *arg);
 
+static void run_post_startup(void);
+
 /* variables */
 static const char broken[] = "broken";
 static pid_t child_pid = -1;
@@ -2270,7 +2272,7 @@ run(char *startup_cmd)
 	wlr_cursor_warp_closest(cursor, NULL, cursor->x, cursor->y);
 	wlr_cursor_set_xcursor(cursor, cursor_mgr, "default");
 
-  	runPostStartup();
+  	run_post_startup();
 
 	/* Run the Wayland event loop. This does not return until you exit the
 	 * compositor. Starting the backend rigged up all of the necessary event
@@ -3247,7 +3249,7 @@ xwaylandready(struct wl_listener *listener, void *data)
 #endif
 
 void
-runPostStartup() {
+run_post_startup(void) {
 	Arg arg = { .v = poststartupcmd };
 	spawn(&arg);
 }
