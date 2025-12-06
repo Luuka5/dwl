@@ -1,6 +1,6 @@
 swaylock \
   -f \
-  --image $HOME/Pictures/wallpapers/srcery-lock.png \
+  --image "/usr/share/wallpapers/srcery-lock.png" \
   --scaling center \
   --color 1c1b19 \
   --ring-color 918175 \
