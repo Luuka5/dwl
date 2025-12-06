@@ -2,15 +2,15 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+kanshi  &
 lock
 
+run-status &
+
 (
-sleep 0.5
+sleep 1
 dwlb -show HDMI-A-1 &
 ) &
-
-run-status &
-kanshi  &
 
 swayidle -w \
   timeout 1000 'lock' \
