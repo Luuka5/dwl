@@ -3250,8 +3250,7 @@ xwaylandready(struct wl_listener *listener, void *data)
 
 void
 run_post_startup(void) {
-	Arg arg = { .v = poststartupcmd };
-	spawn(&arg);
+	execl("/bin/sh", "/bin/sh", "-c", poststartupcmd, NULL);
 }
 
 int
