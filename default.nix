@@ -148,7 +148,6 @@ pkgs.symlinkJoin {
     dwl
     dwlb
     (makeScript "bt-last-device" [ pkgs.blueman ])
-    (makeScript "bt-disconnect-last" [ pkgs.blueman ])
 
     (makeScript "clipscreenshot" [ pkgs.grim pkgs.slurp ])
     (makeScript "savescreenshot" [ pkgs.grim pkgs.slurp ])
