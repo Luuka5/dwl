@@ -152,7 +152,8 @@ static const char *volumedowncmd[] = { "track", "\uf027-", "0.5", "--", "media-c
 static const char *brightnessupcmd[] = { "track", "\uf400+", "0.5", "--", "brightness-control", "up", NULL };
 static const char *brightnessdowncmd[] = { "track", "\uf400-", "0.5", "--", "brightness-control", "down", NULL };
 
-static const char *poststartup[] = { "post-startup", NULL };
+// This has to be defined, It is called directly from source after startup
+static const char *poststartupcmd[] = { "post-startup", NULL };
 
 void
 toggledwlb(const Arg *arg)
@@ -182,7 +183,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,		     XKB_KEY_w,          spawn, 	 {.v = browsercmd} },
 
-	{ MODKEY,                    XKB_KEY_u,          spawn,          {.v = poststartup } },
+	{ MODKEY,                    XKB_KEY_u,          spawn,          {.v = poststartupcmd } },
 
 	{ MODKEY,                    XKB_KEY_a,          toggledwlb, 	{0} },
 	{ MODKEY,                    XKB_KEY_g,          togglegaps, 	{0} },
