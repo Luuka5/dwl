@@ -1,8 +1,7 @@
 swaylock \
-  -f \
   --image "/usr/share/wallpapers/srcery-locked.png" \
   --scaling center \
-  --color 1c1b19 \
+  --color 141412 \
   --ring-color 00000000 \
   --ring-ver-color 519f50 \
   --ring-wrong-color ef2f27 \
