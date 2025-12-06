@@ -42,6 +42,6 @@ find_ancestor() {
     return 1
 }
 
-DWL_PID=$(find_ancestor "dwl")
-
-kill "$DWL_PID"
+#DWL_PID=$(find_ancestor "dwl")
+#kill "$DWL_PID"
+kill $(pidof "dwl")
