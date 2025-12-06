@@ -13,8 +13,8 @@ static int gaps 			   = 1;
 
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
 static const float rootcolor[]             = COLOR(0x000000ff);
-static const float bordercolor[]           = COLOR(0xfbb829ff);
-static const float focuscolor[]            = COLOR(0xcc241dff);
+static const float bordercolor[]           = COLOR(0x1c1c1cff);
+static const float focuscolor[]            = COLOR(0xef2f27ff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.f, 0.f, 0.f, 1.0f}; /* You can also use glsl colors */
@@ -57,7 +57,7 @@ static const MonitorRule monrules[] = {
 	//{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	*/
 	/* defaults */
-	{ "HDMI-A-1", 0.55,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },  // vertical monitor layout
+	{ "HDMI-A-1", 0.55f,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },  // vertical monitor layout
 	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
 
@@ -132,7 +132,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 // Track command is used to send an symbol to status bar informing that the operation is being done
 static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wmenu-run", "-N", "000000ff", "-S", "fbb829ff", NULL };
+static const char *menucmd[] = { "wmenu-run", "-N", "000000ff", "-S", "ef2f27ff", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 
 static const char *lockcmd[] = { "lock", NULL };
@@ -151,6 +151,9 @@ static const char *volumeupcmd[] = { "track", "\uf028+", "0.5", "--", "media-con
 static const char *volumedowncmd[] = { "track", "\uf027-", "0.5", "--", "media-control", "volume", "-5", NULL };
 static const char *brightnessupcmd[] = { "track", "\uf400+", "0.5", "--", "brightness-control", "up", NULL };
 static const char *brightnessdowncmd[] = { "track", "\uf400-", "0.5", "--", "brightness-control", "down", NULL };
+
+// This has to be defined, It is called directly from source after startup
+static const char *poststartupcmd[] = { "post-startup", NULL };
 
 void
 toggledwlb(const Arg *arg)

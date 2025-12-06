@@ -1,18 +1,18 @@
-#!/bin/bash
-
 swaylock \
   -f \
-  --color 000000 \
-  --ring-color 3c3836 \
-  --ring-ver-color 689d6a \
-  --ring-wrong-color cc241d \
-  --ring-clear-color 458588 \
-  --key-hl-color 98971a \
-  --bs-hl-color fb4934 \
-  --inside-color 28282888 \
-  --inside-ver-color 689d6a33 \
-  --inside-wrong-color cc241d33 \
-  --inside-clear-color 45858833 \
+  --image $HOME/Pictures/wallpapers/srcery-lock.png \
+  --scaling center \
+  --color 1c1b19 \
+  --ring-color 918175 \
+  --ring-ver-color 519f50 \
+  --ring-wrong-color ef2f27 \
+  --ring-clear-color 2c78bf \
+  --key-hl-color 98bc37 \
+  --bs-hl-color f75341 \
+  --inside-color 1c1b1988 \
+  --inside-ver-color 519f5033 \
+  --inside-wrong-color ef2f2733 \
+  --inside-clear-color 2c78bf33 \
   --text-color 00000000 \
   --text-ver-color 00000000 \
   --text-wrong-color 00000000 \
