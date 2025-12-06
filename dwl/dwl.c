@@ -3245,7 +3245,7 @@ xwaylandready(struct wl_listener *listener, void *data)
 #endif
 
 void
-runAutostart(void) {
+runPostStartup(void) {
 	Arg arg = { .v = poststartupcmd };
 	spawn(&arg);
 }
@@ -3273,7 +3273,7 @@ main(int argc, char *argv[])
 	if (!getenv("XDG_RUNTIME_DIR"))
 		die("XDG_RUNTIME_DIR must be set");
 	setup();
-	runAutostart();
+	runPostStartup();
 	run(startup_cmd);
 	cleanup();
 	return EXIT_SUCCESS;

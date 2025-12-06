@@ -1,16 +1,7 @@
-set +o errexit
-set +o nounset
-set +o pipefail
-
-
 (
 sleep 1
 dwlb -show HDMI-A-1
 ) &
-
-(
-kanshi
-)&
 
 run-status &
 
