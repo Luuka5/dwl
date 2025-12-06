@@ -11,3 +11,6 @@ swayidle -w \
   before-sleep 'lock' \
   after-resume 'kanshi' &
 
+kanshi &
+pkill kanshi
+kanshi
