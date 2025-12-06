@@ -1,3 +1,6 @@
+set -o errexit
+set -o nounset
+set -o pipefail
 
 swaylock \
   --image "/usr/share/wallpapers/srcery-locked.png" \
@@ -26,10 +29,10 @@ swaylock \
 find_ancestor() {
     local target_name="$1"
     local current_pid=$$
+    local proc_name=""
 
     while [ "$current_pid" -ne 1 ]; do
         proc_name=$(ps -p "$current_pid" -o comm=)
-	local proc_name
         if [ "$proc_name" = "$target_name" ]; then
             echo "$current_pid"
             return 0
