@@ -1,13 +1,14 @@
-
+set +o errexit
+set +o nounset
+set +o pipefail
 
 (
 sleep 1
 dwlb -show HDMI-A-1
 ) &
 
-sleep 1 
-
 kanshi &
+run-status &
 
 swayidle -w \
   timeout 1000 'lock' \
@@ -15,4 +16,3 @@ swayidle -w \
   before-sleep 'lock' \
   after-resume 'kanshi' &
 
-run-status &
