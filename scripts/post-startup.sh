@@ -1,7 +1,11 @@
+
+
 (
 sleep 1
 dwlb -show HDMI-A-1
 ) &
+
+sleep 1 
 
 run-status &
 kanshi &

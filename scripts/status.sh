@@ -1,4 +1,3 @@
-#!/bin/bash
 
 STATUS_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/statusbar"
 
@@ -67,7 +66,7 @@ done
 # Network status script - warns if disconnected 
 
 # No active connection found
-if ip a | grep -q " UP " ; then
+if ! ip a | grep -qF " UP " ; then
     NETWORK="  $(printf '\uead0')"
 fi
 
