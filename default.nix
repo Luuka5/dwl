@@ -164,7 +164,7 @@ pkgs.symlinkJoin {
     (makeScript "locksuspend" [ pkgs.kanshi ]) # ?
 
     (makeScript "start-wm" [ dwl dwlb]) # ?
-    (makeScript "login-screen" [ dwl dwlb pkgs.swaylock ]) # ?
+    (makeScript "start-login-screen" [ dwl dwlb pkgs.swaylock ]) # ?
     (makeScript "lock-and-kill-dwl" [ swaylock ]) # ?
     (makeScript "post-startup" [ pkgs.kanshi pkgs.swayidle ]) # ?
   ];
