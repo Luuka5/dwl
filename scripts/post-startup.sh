@@ -3,8 +3,6 @@ set -o nounset
 set -o pipefail
 
 kanshi  &
-lock &
-
 run-status &
 
 (
@@ -18,3 +16,4 @@ swayidle -w \
   before-sleep 'lock' \
   after-resume 'kanshi' &
 
+lock &
