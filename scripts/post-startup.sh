@@ -7,7 +7,6 @@ dwlb -show HDMI-A-1
 
 sleep 1 
 
-run-status &
 kanshi &
 
 swayidle -w \
@@ -15,3 +14,5 @@ swayidle -w \
   timeout 1201 'systemctl suspend' \
   before-sleep 'lock' \
   after-resume 'kanshi' &
+
+run-status &

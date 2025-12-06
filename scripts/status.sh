@@ -1,3 +1,6 @@
+set +o errexit
+set +o nounset
+set -o pipefail
 
 STATUS_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/statusbar"
 
