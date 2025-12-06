@@ -1,5 +1,5 @@
+
 swaylock \
-  -f \
   --image "/usr/share/wallpapers/srcery-locked.png" \
   --scaling center \
   --color 1c1b19 \
@@ -22,3 +22,22 @@ swaylock \
   --line-wrong-color 00000000 \
   --line-clear-color 00000000 \
   --separator-color 00000000
+
+find_ancestor() {
+    local target_name="$1"
+    local current_pid=$$
+
+    while [ "$current_pid" -ne 1 ]; do
+        local proc_name=$(ps -p "$current_pid" -o comm=)
+        if [ "$proc_name" = "$target_name" ]; then
+            echo "$current_pid"
+            return 0
+        fi
+        current_pid=$(ps -p "$current_pid" -o ppid= | tr -d ' ')
+    done
+    return 1
+}
+
+DWL_PID=$(find_ancestor "dwl")
+
+kill "$DWL_PID"
