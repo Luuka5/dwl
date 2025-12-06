@@ -1,6 +1,6 @@
 
 # Start a minimal Sway session for swaylock
-dwl &
+exec dwl -s 'dwlb' &
 DWL_PID=$!
 
 # Wait for Sway to start
