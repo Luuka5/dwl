@@ -10,7 +10,7 @@ dwlb -show HDMI-A-1
 run-status &
 
 killall kanshi 
-kanshi &
+kanshi > /tmp/kanshi.log 2>&1 &
 
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 systemctl --user start graphical-session.target
