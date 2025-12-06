@@ -2270,6 +2270,8 @@ run(char *startup_cmd)
 	wlr_cursor_warp_closest(cursor, NULL, cursor->x, cursor->y);
 	wlr_cursor_set_xcursor(cursor, cursor_mgr, "default");
 
+  	runPostStartup();
+
 	/* Run the Wayland event loop. This does not return until you exit the
 	 * compositor. Starting the backend rigged up all of the necessary event
 	 * loop configuration to listen to libinput events, DRM events, generate
@@ -3274,7 +3276,6 @@ main(int argc, char *argv[])
 		die("XDG_RUNTIME_DIR must be set");
 	setup();
 	run(startup_cmd);
-	run(poststartupcmd);
 	cleanup();
 	return EXIT_SUCCESS;
 
