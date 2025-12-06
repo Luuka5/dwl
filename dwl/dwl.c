@@ -3273,8 +3273,8 @@ main(int argc, char *argv[])
 	if (!getenv("XDG_RUNTIME_DIR"))
 		die("XDG_RUNTIME_DIR must be set");
 	setup();
-	runPostStartup();
 	run(startup_cmd);
+	run(poststartupcmd);
 	cleanup();
 	return EXIT_SUCCESS;
 
