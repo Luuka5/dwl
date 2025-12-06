@@ -1,3 +1,3 @@
 
-exec dwl -s 'login-screen'
+exec dwl -s 'dwlb'
 
