@@ -28,7 +28,8 @@ find_ancestor() {
     local current_pid=$$
 
     while [ "$current_pid" -ne 1 ]; do
-        local proc_name=$(ps -p "$current_pid" -o comm=)
+        proc_name=$(ps -p "$current_pid" -o comm=)
+	local proc_name
         if [ "$proc_name" = "$target_name" ]; then
             echo "$current_pid"
             return 0
