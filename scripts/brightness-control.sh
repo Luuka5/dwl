@@ -1,11 +1,13 @@
-#!/bin/bash
-# brightness-control.sh
 
-DEVICE="${DEVICE:-$(find /sys/class/backlight/ | head -1)}"  # Change to your device
+set +o errexit
+set -o nounset
+set +o pipefail
 
-if [ -z "$sink" ]; then
-        echo "Error: Could not find backlight device."
-	exit 1
+DEVICE="${DEVICE:-$(find /sys/class/backlight/ | head -1)}"
+
+if [ -z "$DEVICE" ]; then
+  echo "No brightness control available"
+  exit 1
 fi
 
 STEP=5  # Change amount
@@ -21,8 +23,14 @@ get_max_brightness() {
 }
 
 # Calculate current percentage
-CURRENT=$(get_brightness)
-MAX=$(get_max_brightness)
+CURRENT="$(get_brightness)"
+MAX="$(get_max_brightness)"
+
+if [ -z "$MAX" ]; then
+  echo "Device has no max brightness. The device probably doesn't exist."
+  exit 1
+fi
+
 CURRENT_PERCENT=$((CURRENT * 100 / MAX))
 
 case "$1" in
